@@ -1,0 +1,54 @@
+﻿@model Domain.Entities.Pessoas.Juridica
+
+@{
+    ViewData["Title"] = "Detalhes Pessoa Juridica";
+}
+
+<h2>Detalhes Pessoa Juridica</h2>
+
+<div>
+    <h4>Juridica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InscricaoEstadual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InscricaoEstadual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFundacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataFundacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.JuridicaId">Editar</a> |
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Domain.Entities.Pessoas.Fisica>
+
+@{
+    ViewData["Title"] = "Pessoa FIsica";
+}
+
+<h2>Pessoa Fisica</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pessoa.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.FisicaId">Editar</a> |
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.FisicaId">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.FisicaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

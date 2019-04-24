@@ -1,0 +1,24 @@
+﻿@model ECOMMERCE.UI.ViewModels.PessoaTipoViewModel
+
+<div>
+    <h4>PessoaTipoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PessoaTipoId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PessoaTipoId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

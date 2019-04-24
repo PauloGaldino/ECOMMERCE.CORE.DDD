@@ -1,0 +1,45 @@
+﻿@model Domain.Entities.Contatos.Contato
+
+@{
+    ViewData["Title"] = "Deletar o Contato";
+}
+
+<h2>Deletar o Contato</h2>
+
+<h3>Você tem certeza que deseja realmente deletar este registro?</h3>
+<div>
+    <h4>Contato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email.EnderecoEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefone.Numero)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Bairro)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ContatoId" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
+    </form>
+</div>

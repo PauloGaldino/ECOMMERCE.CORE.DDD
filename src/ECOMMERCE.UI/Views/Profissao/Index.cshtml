@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Domain.Entities.Pessoas.Profissoes.Profissao>
+
+@{
+    ViewData["Title"] = "Profissão";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CBO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CBO)
+            </td>
+            <td>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.ProfissaoId">Editar</a> |
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.ProfissaoId">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ProfissaoId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

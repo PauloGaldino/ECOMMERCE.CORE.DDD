@@ -1,0 +1,57 @@
+﻿@model Domain.Entities.Pessoas.Juridica
+
+@{
+    ViewData["Title"] = "Deletar Pessoa Juridica";
+}
+
+<h2>Deletar Pessoa Juridica</h2>
+
+<h3>Você tem certeza que deseja realmente deletar este registro?</h3>
+<div>
+    <h4>Juridica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InscricaoEstadual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InscricaoEstadual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFundacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataFundacao)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="JuridicaId" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Volta para a Lista</a>
+    </form>
+</div>

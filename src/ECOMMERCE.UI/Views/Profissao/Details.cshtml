@@ -1,0 +1,36 @@
+﻿@model Domain.Entities.Pessoas.Profissoes.Profissao
+
+@{
+    ViewData["Title"] = "Detalhes Profissão";
+}
+
+<h2>Detalhes Profissão</h2>
+
+<div>
+    <h4>Profissão</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CBO)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CBO)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.ProfissaoId">Editar</a> |
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
+</div>

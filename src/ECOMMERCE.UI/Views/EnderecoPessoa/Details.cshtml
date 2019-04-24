@@ -1,0 +1,30 @@
+﻿@model Domain.Entities.Contatos.EnderecoPessoa
+
+@{
+    ViewData["Title"] = "Detalhes Endereço Pessoa";
+}
+
+<h2>Detalhes Endereço Pessoa</h2>
+
+<div>
+    <h4>EnderecoPessoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Endereco.Bairro)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
+</div>

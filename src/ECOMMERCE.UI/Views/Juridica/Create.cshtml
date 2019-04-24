@@ -1,0 +1,54 @@
+﻿@model Domain.Entities.Pessoas.Juridica
+
+@{
+    ViewData["Title"] = "Criar Pessoa Juridica";
+}
+
+<h2>Criar Pessoa Jurica</h2>
+
+<h4>Juridica</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PessoaId" class="control-label"></label>
+                <select asp-for="PessoaId" class ="form-control" asp-items="ViewBag.PessoaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeFantasia" class="control-label"></label>
+                <input asp-for="NomeFantasia" class="form-control" />
+                <span asp-validation-for="NomeFantasia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RazaoSocial" class="control-label"></label>
+                <input asp-for="RazaoSocial" class="form-control" />
+                <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cnpj" class="control-label"></label>
+                <input asp-for="Cnpj" class="form-control" />
+                <span asp-validation-for="Cnpj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InscricaoEstadual" class="control-label"></label>
+                <input asp-for="InscricaoEstadual" class="form-control" />
+                <span asp-validation-for="InscricaoEstadual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataFundacao" class="control-label"></label>
+                <input asp-for="DataFundacao" class="form-control" />
+                <span asp-validation-for="DataFundacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-success" />|
+                <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

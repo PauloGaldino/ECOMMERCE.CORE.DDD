@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Domain.Entities.Vendas.Bebida>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MineDescricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoLonga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageThumbnailUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BebidaPrefierida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estoque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MineDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoLonga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageThumbnailUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BebidaPrefierida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estoque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.CategoriaId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BebidaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BebidaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BebidaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

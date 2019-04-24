@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Domain.Entities.Pessoas.Cliente>
+
+@{
+    ViewData["Title"] = "Cliente ";
+}
+
+<h2>Clientes</h2>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pessoa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pessoa.Nome)
+            </td>
+            <td>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.ClienteId">Editar</a> |
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.ClienteId">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ClienteId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

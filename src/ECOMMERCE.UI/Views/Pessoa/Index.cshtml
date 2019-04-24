@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Domain.Entities.Pessoas.Pessoa>
+
+@{
+    ViewData["Title"] = "Pessoa";
+}
+
+<h2>Pessoa</h2>
+
+<p>
+    <a  class="btn btn-success " asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PessoaTipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sobrenome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PessoaTipo.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sobrenome)
+            </td>
+            <td>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.PessoaId">Editar</a> |
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.PessoaId">Detalhes</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PessoaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

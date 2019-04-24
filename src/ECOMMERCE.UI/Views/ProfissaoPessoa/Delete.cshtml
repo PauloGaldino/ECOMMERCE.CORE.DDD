@@ -1,0 +1,33 @@
+﻿@model Domain.Entities.Pessoas.Profissoes.ProfissaoPessoa
+
+@{
+    ViewData["Title"] = "Deletar Profissão Pessoa";
+}
+
+<h2>Deletar Profissão Pessoa</h2>
+
+<h3>Você tem certeza que deseja realmente deletar este registro?</h3>
+<div>
+    <h4>Profissão Pessoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Profissao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Profissao.CBO)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
+    </form>
+</div>
